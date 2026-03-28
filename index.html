@@ -7,11 +7,15 @@
 <title>Kashmir Travel Hub</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
-
-<link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
-
 <link rel="stylesheet" href="style.css">
+
+<!-- FIREBASE -->
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+
+<!-- EMAILJS -->
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
 </head>
 
 <body>
@@ -22,29 +26,13 @@
 </nav>
 
 <!-- HERO -->
-<div class="swiper mySwiper">
-  <div class="swiper-wrapper">
-
-    <div class="swiper-slide">
-      <img src="dal.jpg">
-      <div class="hero-text">Explore Kashmir</div>
-    </div>
-
-    <div class="swiper-slide">
-      <img src="gulmarg.jpg">
-      <div class="hero-text">Heaven on Earth</div>
-    </div>
-
-    <div class="swiper-slide">
-      <img src="pahalgam.jpg">
-      <div class="hero-text">Luxury Travel Experience</div>
-    </div>
-
-  </div>
-</div>
+<section class="hero">
+  <h1>Explore Kashmir</h1>
+</section>
 
 <!-- TOURS -->
-<section class="cards" data-aos="fade-up">
+<section class="cards">
+
   <div class="card">
     <img src="gulmarg.jpg">
     <h3>Gulmarg Tour</h3>
@@ -65,10 +53,11 @@
     <p>₹6,999</p>
     <button onclick="payNow()">Book Now</button>
   </div>
+
 </section>
 
 <!-- BOOKING -->
-<section class="booking" data-aos="fade-up">
+<section class="booking">
   <h2>Book Your Trip</h2>
 
   <input id="name" placeholder="Your Name">
@@ -81,11 +70,7 @@
 <!-- WHATSAPP -->
 <a href="https://wa.me/917889439280" class="whatsapp">💬</a>
 
-<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
-
-<script type="module" src="script.js"></script>
+<script src="script.js"></script>
 
 </body>
 </html>
