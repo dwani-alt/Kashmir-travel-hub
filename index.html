@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Kashmir Travel Hub</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- NAV -->
+<nav>
+  <h2>Kashmir Travel Hub</h2>
+</nav>
+
+<!-- HERO -->
+<div class="swiper mySwiper">
+  <div class="swiper-wrapper">
+
+    <div class="swiper-slide">
+      <img src="dal.jpg">
+      <div class="hero-text">Explore Kashmir</div>
+    </div>
+
+    <div class="swiper-slide">
+      <img src="gulmarg.jpg">
+      <div class="hero-text">Heaven on Earth</div>
+    </div>
+
+    <div class="swiper-slide">
+      <img src="pahalgam.jpg">
+      <div class="hero-text">Luxury Travel Experience</div>
+    </div>
+
+  </div>
+</div>
+
+<!-- TOURS -->
+<section class="cards" data-aos="fade-up">
+  <div class="card">
+    <img src="gulmarg.jpg">
+    <h3>Gulmarg Tour</h3>
+    <p>₹8,999</p>
+    <button onclick="payNow()">Book Now</button>
+  </div>
+
+  <div class="card">
+    <img src="pahalgam.jpg">
+    <h3>Pahalgam Tour</h3>
+    <p>₹7,499</p>
+    <button onclick="payNow()">Book Now</button>
+  </div>
+
+  <div class="card">
+    <img src="sonmarg.jpg">
+    <h3>Sonmarg Tour</h3>
+    <p>₹6,999</p>
+    <button onclick="payNow()">Book Now</button>
+  </div>
+</section>
+
+<!-- BOOKING -->
+<section class="booking" data-aos="fade-up">
+  <h2>Book Your Trip</h2>
+
+  <input id="name" placeholder="Your Name">
+  <input id="phone" placeholder="Phone Number">
+  <input id="destination" placeholder="Destination">
+
+  <button onclick="submitBooking()">Submit Booking</button>
+</section>
+
+<!-- WHATSAPP -->
+<a href="https://wa.me/917889439280" class="whatsapp">💬</a>
+
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+
+<script type="module" src="script.js"></script>
+
+</body>
+</html>
