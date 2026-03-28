@@ -9,68 +9,98 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 
-<!-- FIREBASE -->
+<!-- Firebase -->
 <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
 
-<!-- EMAILJS -->
+<!-- EmailJS -->
 <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
 
 </head>
 
 <body>
 
+<!-- TOP -->
+<div class="topbar">
+📞 7889439280 | 📧 Kashmiritravellhub
+</div>
+
 <!-- NAV -->
-<nav>
-  <h2>Kashmir Travel Hub</h2>
+<nav class="navbar">
+<h2>Kashmir Travel Hub</h2>
 </nav>
 
 <!-- HERO -->
 <section class="hero">
-  <h1>Explore Kashmir</h1>
+<div class="overlay"></div>
+<div class="hero-content">
+<h1>Explore Kashmir</h1>
+<p>Luxury Travel Experience</p>
+</div>
 </section>
 
-<!-- TOURS -->
+<!-- LOGIN -->
+<section class="login">
+<h2>Login</h2>
+<input id="email" placeholder="Email">
+<input id="password" type="password" placeholder="Password">
+<button onclick="signup()">Signup</button>
+<button onclick="login()">Login</button>
+</section>
+
+<!-- PACKAGES -->
 <section class="cards">
+<div class="card">
+<img src="gulmarg.jpg">
+<h3>Gulmarg</h3>
+<p>₹8999</p>
+<button onclick="payUPI()">Pay</button>
+</div>
 
-  <div class="card">
-    <img src="gulmarg.jpg">
-    <h3>Gulmarg Tour</h3>
-    <p>₹8,999</p>
-    <button onclick="payNow()">Book Now</button>
-  </div>
+<div class="card">
+<img src="pahalgam.jpg">
+<h3>Pahalgam</h3>
+<p>₹7499</p>
+<button onclick="payUPI()">Pay</button>
+</div>
 
-  <div class="card">
-    <img src="pahalgam.jpg">
-    <h3>Pahalgam Tour</h3>
-    <p>₹7,499</p>
-    <button onclick="payNow()">Book Now</button>
-  </div>
-
-  <div class="card">
-    <img src="sonmarg.jpg">
-    <h3>Sonmarg Tour</h3>
-    <p>₹6,999</p>
-    <button onclick="payNow()">Book Now</button>
-  </div>
-
+<div class="card">
+<img src="sonmarg.jpg">
+<h3>Sonmarg</h3>
+<p>₹6999</p>
+<button onclick="payUPI()">Pay</button>
+</div>
 </section>
 
-<!-- BOOKING -->
+<!-- BOOK -->
 <section class="booking">
-  <h2>Book Your Trip</h2>
-
-  <input id="name" placeholder="Your Name">
-  <input id="phone" placeholder="Phone Number">
-  <input id="destination" placeholder="Destination">
-
-  <button onclick="submitBooking()">Submit Booking</button>
+<h2>Book Now</h2>
+<input id="name" placeholder="Name">
+<input id="phone" placeholder="Phone">
+<input id="destination" placeholder="Destination">
+<button onclick="submitBooking()">Submit</button>
 </section>
 
-<!-- WHATSAPP -->
+<!-- REVIEWS -->
+<section class="reviews">
+<h2>Reviews</h2>
+<p>Aamir – Amazing trip</p>
+<p>Sarah – Best service</p>
+</section>
+
+<!-- MAP -->
+<iframe src="https://www.google.com/maps?q=Srinagar,Kashmir&output=embed"></iframe>
+
+<!-- INSTAGRAM -->
+<section class="gallery">
+<img src="dal.jpg">
+<img src="gulmarg.jpg">
+<img src="pahalgam.jpg">
+</section>
+
 <a href="https://wa.me/917889439280" class="whatsapp">💬</a>
 
 <script src="script.js"></script>
-
 </body>
 </html>
