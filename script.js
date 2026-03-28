@@ -1,38 +1,39 @@
+// INIT EMAILJS
 emailjs.init("mmT72c7j9ubXSdvp0");
 
+// FIREBASE CONFIG
 const firebaseConfig = {
-apiKey:"AIzaSy...",
-authDomain:"kashmir-travel-hub.firebaseapp.com",
-projectId:"kashmir-travel-hub"
+  apiKey: "AIzaSyB2eYymhQQBAZ3wFEgj_mxdVZieU6Ysc-o",
+  authDomain: "kashmir-travel-hub.firebaseapp.com",
+  projectId: "kashmir-travel-hub"
 };
 
 firebase.initializeApp(firebaseConfig);
-const db=firebase.firestore();
-const auth=firebase.auth();
+const db = firebase.firestore();
 
-// LOGIN
-function signup(){
-let e=email.value,p=password.value;
-auth.createUserWithEmailAndPassword(e,p).then(()=>alert("Signup success"));
+// BOOKING FUNCTION
+function submitBooking() {
+  const name = document.getElementById("name").value;
+  const phone = document.getElementById("phone").value;
+  const destination = document.getElementById("destination").value;
+
+  db.collection("bookings").add({
+    name: name,
+    phone: phone,
+    destination: destination,
+    status: "Pending"
+  });
+
+  emailjs.send("service_hg061ij", "template_2ozhkup", {
+    name: name,
+    phone: phone,
+    destination: destination
+  });
+
+  alert("Booking Submitted Successfully 🚀");
 }
 
-function login(){
-let e=email.value,p=password.value;
-auth.signInWithEmailAndPassword(e,p).then(()=>alert("Login success"));
-}
-
-// BOOKING
-function submitBooking(){
-let n=name.value,p=phone.value,d=destination.value;
-
-db.collection("bookings").add({n,p,d});
-
-emailjs.send("service_hg061ij","template_2ozhkup",{name:n,phone:p,destination:d});
-
-alert("Booking Done");
-}
-
-// UPI
-function payUPI(){
-window.location.href="upi://pay?pa=wanidanish1304@okhdfcbank&pn=Danish&am=500&cu=INR";
+// PAYMENT (TEMP)
+function payNow() {
+  alert("Payment system coming soon 💳");
 }
