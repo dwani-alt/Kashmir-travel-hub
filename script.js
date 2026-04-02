@@ -11,29 +11,43 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 const db = firebase.firestore();
 
-// BOOKING FUNCTION
-function submitBooking() {
+// FORM SUBMIT
+document.getElementById("bookingForm").addEventListener("submit", async function (e) {
+  e.preventDefault();
+
   const name = document.getElementById("name").value;
   const phone = document.getElementById("phone").value;
   const destination = document.getElementById("destination").value;
+  const date = document.getElementById("date").value;
+  const message = document.getElementById("message").value;
 
-  db.collection("bookings").add({
-    name: name,
-    phone: phone,
-    destination: destination,
-    status: "Pending"
-  });
+  if (!name || !phone) {
+    alert("Please fill required fields");
+    return;
+  }
 
-  emailjs.send("service_hg061ij", "template_2ozhkup", {
-    name: name,
-    phone: phone,
-    destination: destination
-  });
+  try {
+    await db.collection("bookings").add({
+      name,
+      phone,
+      destination,
+      date,
+      message,
+      status: "Pending",
+      createdAt: new Date()
+    });
 
-  alert("Booking Submitted Successfully 🚀");
-}
+    await emailjs.send("service_hg061ij", "template_2ozhkup", {
+      name,
+      phone,
+      destination
+    });
 
-// PAYMENT (TEMP)
-function payNow() {
-  alert("Payment system coming soon 💳");
-}
+    alert("Booking Submitted Successfully 🚀");
+    this.reset();
+
+  } catch (error) {
+    alert("Error occurred ❌");
+    console.error(error);
+  }
+});

@@ -3,74 +3,84 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Kashmir Travel Hub</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 
-<!-- FIREBASE -->
+<!-- FIREBASE CDN -->
 <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
 
 <!-- EMAILJS -->
-<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
-
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
 </head>
 
 <body>
 
-<!-- NAV -->
-<nav>
-  <h2>Kashmir Travel Hub</h2>
-</nav>
+<!-- NAVBAR -->
+<header class="nav">
+  <h2>Kashmir</h2>
+  <nav>
+    <a href="#">Home</a>
+    <a href="#destinations">Explore</a>
+    <a href="#contact">Book</a>
+  </nav>
+</header>
+
+<!-- WHATSAPP -->
+<a href="https://wa.me/917889439280" class="whatsapp" target="_blank">💬</a>
 
 <!-- HERO -->
 <section class="hero">
-  <h1>Explore Kashmir</h1>
+  <video autoplay muted loop class="bg-video">
+    <source src="https://cdn.coverr.co/videos/coverr-snowy-mountains-5174/1080p.mp4">
+  </video>
+  <div class="hero-content">
+    <h1>Discover Kashmir</h1>
+    <p>Luxury journeys crafted for unforgettable memories</p>
+  </div>
 </section>
 
-<!-- TOURS -->
-<section class="cards">
-
-  <div class="card">
-    <img src="gulmarg.jpg">
-    <h3>Gulmarg Tour</h3>
-    <p>₹8,999</p>
-    <button onclick="payNow()">Book Now</button>
+<!-- DESTINATIONS -->
+<section class="destinations" id="destinations">
+  <h2>Explore Kashmir</h2>
+  <div class="grid">
+    <div class="card"><img src="gulmarg.jpg"><div class="overlay">Gulmarg</div></div>
+    <div class="card"><img src="pahalgam.jpg"><div class="overlay">Pahalgam</div></div>
+    <div class="card"><img src="sonmarg.jpg"><div class="overlay">Sonmarg</div></div>
+    <div class="card"><img src="dal.jpg"><div class="overlay">Dal Lake</div></div>
   </div>
+</section>
 
-  <div class="card">
-    <img src="pahalgam.jpg">
-    <h3>Pahalgam Tour</h3>
-    <p>₹7,499</p>
-    <button onclick="payNow()">Book Now</button>
-  </div>
-
-  <div class="card">
-    <img src="sonmarg.jpg">
-    <h3>Sonmarg Tour</h3>
-    <p>₹6,999</p>
-    <button onclick="payNow()">Book Now</button>
-  </div>
-
+<!-- EXPERIENCE -->
+<section class="experience">
+  <h2>Crafted Luxury Experiences</h2>
+  <p>We design journeys that blend nature, comfort and unforgettable moments.</p>
 </section>
 
 <!-- BOOKING -->
-<section class="booking">
-  <h2>Book Your Trip</h2>
+<section class="booking" id="contact">
+  <h2>Plan Your Kashmir Trip</h2>
 
-  <input id="name" placeholder="Your Name">
-  <input id="phone" placeholder="Phone Number">
-  <input id="destination" placeholder="Destination">
+  <form id="bookingForm">
+    <input id="name" type="text" placeholder="Full Name" required>
+    <input id="phone" type="tel" placeholder="Phone Number" required>
 
-  <button onclick="submitBooking()">Submit Booking</button>
+    <select id="destination">
+      <option>Select Destination</option>
+      <option>Gulmarg</option>
+      <option>Pahalgam</option>
+      <option>Sonmarg</option>
+      <option>Srinagar</option>
+    </select>
+
+    <input id="date" type="date">
+    <textarea id="message" placeholder="Special Requests"></textarea>
+
+    <button type="submit">Book Now</button>
+  </form>
 </section>
 
-<!-- WHATSAPP -->
-<a href="https://wa.me/917889439280" class="whatsapp">💬</a>
-
 <script src="script.js"></script>
-
 </body>
 </html>
